@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .button-row {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .drag-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    cursor: pointer;
+    display: none;
+    z-index: 1;
+    border-radius: 50%;
+  }
+  
+  .drag-handle-top-left {
+    top: -5px;
+    left: -5px;
+  }
+  
+  .drag-handle-top-right {
+    top: -5px;
+    right: -5px;
+  }
+  
+  .drag-handle-bottom-left {
+    bottom: -5px;
+    left: -5px;
+  }
+  
+  .drag-handle-bottom-right {
+    bottom: -5px;
+    right: -5px;
+  }
+  
