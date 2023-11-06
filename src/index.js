@@ -1,8 +1,8 @@
-import { DivFigure, Drawing } from "/layout";
+import { DivFigure, GridDrawing } from "/layout";
 
 window.addEventListener("load", () => {
   const div = document.getElementById("drawing");
-  window.drawing = new Drawing(null, div);
+  window.drawing = new GridDrawing(null, div);
 });
 
 window.addDivFigure = function addDivFigure() {
