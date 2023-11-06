@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grid Layout Example</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(4, 100px); /* sets column width to 100px */
+        grid-template-rows: repeat(4, 50px); /* sets row height to 50px */
+        grid-gap: 10px; /* sets border space between items to 10px */
+        border: 1px solid black; /* adds a border around each cell */
+        padding: 0; /* removes padding from the container */
+        position: relative; /* sets the container as a reference for absolute positioning */
+      }
+
+      .item {
+        border: 1px solid black; /* adds a border around each item */
+        padding: 0; /* removes padding from each item */
+      }
+
+      .item-17 {
+        position: absolute; /* positions the item relative to the container */
+        top: 0; /* sets the top position to 0 */
+        left: 0; /* sets the left position to 0 */
+        width: 100%; /* sets the width to 100% of the container */
+        height: 100%; /* sets the height to 100% of the container */
+        background-color: rgba(255, 0, 0, 0.5); /* sets the background color to red with 50% opacity */
+        z-index: 1; /* sets the z-index to 1 to place it on top of other items */
+        
+        /* specifies the cells that the item should overlap */
+        grid-row: 2 / 4;
+        grid-column: 2 / 4;
+      }
+    </style>
+    <script>
+    function snapToGrid(x, y, width, height) {
+      const columnWidth = 100;
+      const rowHeight = 50;
+      const columnGap = 10;
+      const rowGap = 10;
+      const containerWidth = 4 * columnWidth + 3 * columnGap;
+      const containerHeight = 4 * rowHeight + 3 * rowGap;
+      const column = Math.round((x + width / 2) / (columnWidth + columnGap)) + 1;
+      const row = Math.round((y + height / 2) / (rowHeight + rowGap)) + 1;
+      return { row, column };
+    }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+      <div class="item">11</div>
+      <div class="item">12</div>
+      <div class="item">13</div>
+      <div class="item">14</div>
+      <div class="item">15</div>
+      <div class="item">16</div>
+      <div class="item item-17">17</div>
+    </div>
+  </body>
+</html>
